@@ -22,8 +22,10 @@ padding:20px;
 background:#111827;
 padding:30px;
 border-radius:20px;
-max-width:500px;
 width:100%;
+max-width:500px;
+box-shadow:0 0 20px rgba(0,0,0,.3);
+position:relative;
 }
 
 h2{
@@ -68,16 +70,23 @@ height:auto;
 display:block;
 margin:0 auto 15px auto;
 }
+
+.credit{
+position:absolute;
+bottom:15px;
+right:20px;
+font-size:9px;
+color:rgba(255,255,255,0.5);
+}
 </style>
 </head>
 
 <body>
 
+    
 <div class="card">
 <img src="logo.png" class="logo" alt="Logo Kota Ternate">
 <h2>Registrasi Responden Survey IHaI 2026</h2>
-
-<p>Kota Ternate</p>
 
 <input type="text" id="nama" placeholder="Nama Lengkap">
 
@@ -91,6 +100,9 @@ Lanjut ke Survei
 
 <div id="status"></div>
 
+<div class="credit">
+Ketpang Ternate
+</div>
 </div>
 
 <script>
