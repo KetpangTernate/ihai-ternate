@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registrasi IHAI Kota Ternate</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#0b1220;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+margin:0;
+padding:20px;
+}
+
+.card{
+background:#111827;
+padding:30px;
+border-radius:20px;
+max-width:500px;
+width:100%;
+}
+
+h2{
+text-align:center;
+margin-bottom:10px;
+}
+
+p{
+text-align:center;
+color:#ccc;
+}
+
+input{
+width:100%;
+padding:12px;
+margin-top:10px;
+margin-bottom:15px;
+border:none;
+border-radius:8px;
+box-sizing:border-box;
+}
+
+button{
+width:100%;
+padding:14px;
+border:none;
+border-radius:8px;
+background:#ff6600;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+#status{
+margin-top:15px;
+text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>Registrasi Peserta Survei IHAI 2026</h2>
+
+<p>Kota Ternate</p>
+
+<input type="text" id="nama" placeholder="Nama Lengkap">
+
+<input type="text" id="profesi" placeholder="Pekerjaan / Profesi">
+
+<input type="text" id="hp" placeholder="No HP / Alamat Email">
+
+<button onclick="kirimData()">
+Lanjut ke Survei
+</button>
+
+<div id="status"></div>
+
+</div>
+
+<script>
+
+async function kirimData(){
+
+const nama=document.getElementById('nama').value;
+const profesi=document.getElementById('profesi').value;
+const hp=document.getElementById('hp').value;
+
+if(!nama || !profesi || !hp){
+alert("Lengkapi data terlebih dahulu");
+return;
+}
+
+document.getElementById("status").innerHTML=
+"Menyimpan data...";
+
+const url =
+"https://script.google.com/macros/s/AKfycbwgT-qw_B-j-Tqpuy5IXwZVJSYpGrdDdKlJHgN9LsmuSuDbqydyBaG5aObDUXXyRPgBeg/exec";
+
+const formData = new FormData();
+formData.append("nama", nama);
+formData.append("profesi", profesi);
+formData.append("hp", hp);
+
+try{
+
+await fetch(url,{
+method:"POST",
+body:JSON.stringify({
+nama:nama,
+profesi:profesi,
+hp:hp,
+userAgent:navigator.userAgent
+}),
+mode:"no-cors"
+});
+
+document.getElementById("status").innerHTML=
+"Data tersimpan. Mengalihkan ke Survei IHAI...";
+
+setTimeout(function(){
+
+window.location.href =
+"https://surveiihai.neterra.id/s/surveiihai";
+
+},1500);
+
+}catch(e){
+
+alert("Terjadi kesalahan");
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
