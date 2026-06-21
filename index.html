@@ -6,157 +6,238 @@
 <title>Registrasi IHAI Kota Ternate</title>
 
 <style>
+
 body{
-font-family:Arial,sans-serif;
-background:#0b1220;
-color:white;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
-margin:0;
-padding:20px;
+    font-family:Arial,sans-serif;
+    background:#0b1220;
+    color:white;
+    margin:0;
+    padding:20px;
+}
+
+.wrapper{
+    max-width:500px;
+    margin:auto;
 }
 
 .card{
-background:#111827;
-padding:30px;
-border-radius:20px;
-width:100%;
-max-width:500px;
-box-shadow:0 0 20px rgba(0,0,0,.3);
-position:relative;
-}
-
-h2{
-text-align:center;
-margin-bottom:10px;
-}
-
-p{
-text-align:center;
-color:#ccc;
-}
-
-input{
-width:100%;
-padding:12px;
-margin-top:10px;
-margin-bottom:15px;
-border:none;
-border-radius:8px;
-box-sizing:border-box;
-}
-
-button{
-width:100%;
-padding:14px;
-border:none;
-border-radius:8px;
-background:#ff6600;
-color:white;
-font-size:16px;
-cursor:pointer;
-}
-
-#status{
-margin-top:15px;
-text-align:center;
+    background:#111827;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 0 20px rgba(0,0,0,.3);
+    position:relative;
 }
 
 .logo{
-width:80px;
-height:auto;
-display:block;
-margin:0 auto 15px auto;
+    width:80px;
+    display:block;
+    margin:0 auto 15px auto;
+}
+
+h2{
+    text-align:center;
+    margin-top:0;
+    margin-bottom:25px;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    margin-bottom:15px;
+    border:none;
+    border-radius:10px;
+    box-sizing:border-box;
+    font-size:15px;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#ff6600;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+}
+
+button:hover{
+    opacity:0.9;
+}
+
+#status{
+    text-align:center;
+    margin-top:15px;
+    color:#cbd5e1;
 }
 
 .credit{
-position:absolute;
-bottom:15px;
-right:20px;
-font-size:9px;
-color:rgba(255,255,255,0.5);
+    position:absolute;
+    right:20px;
+    bottom:15px;
+    font-size:10px;
+    color:rgba(255,255,255,0.5);
 }
+
+.panduan{
+    background:#111827;
+    margin-top:20px;
+    padding:20px;
+    border-radius:20px;
+}
+
+.panduan{
+    margin-top:20px;
+    color:#cbd5e1;
+    font-size:13px;
+    line-height:1.8;
+}
+
+.panduan b{
+    color:white;
+}
+
+.s1{color:#ff0000;font-weight:bold;}
+.s2{color:#ff3300;font-weight:bold;}
+.s3{color:#ff6600;font-weight:bold;}
+.s4{color:#ff9900;font-weight:bold;}
+.s5{color:#ffcc00;font-weight:bold;}
+.s6{color:#99cc00;font-weight:bold;}
+.s7{color:#66cc00;font-weight:bold;}
+.s8{color:#00cc66;font-weight:bold;}
+.s9{color:#00ff99;font-weight:bold;}
+
+@media(max-width:600px){
+
+    .card{
+        padding:25px;
+    }
+
+    h2{
+        font-size:18px;
+    }
+
+    .skor-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
 </style>
 </head>
 
 <body>
 
-    
-<div class="card">
-<img src="logo.png" class="logo" alt="Logo Kota Ternate">
-<h2>Registrasi Responden Survey IHaI 2026</h2>
+<div class="wrapper">
 
-<input type="text" id="nama" placeholder="Nama Lengkap">
+    <div class="card">
 
-<input type="text" id="profesi" placeholder="Pekerjaan / Profesi">
+        <img src="logo.png" class="logo" alt="Logo Kota Ternate">
 
-<input type="text" id="hp" placeholder="No HP / Alamat Email">
+        <h2>
+            Registrasi Responden<br>
+            Survey IHaI 2026
+        </h2>
 
-<button onclick="kirimData()">
-Lanjut ke Survei
-</button>
+        <input type="text"
+               id="nama"
+               placeholder="Nama Lengkap">
 
-<div id="status"></div>
+        <input type="text"
+               id="profesi"
+               placeholder="Pekerjaan / Profesi">
 
-<div class="credit">
-Ketpang Ternate
+        <input type="text"
+               id="hp"
+               placeholder="No HP / Alamat Email">
+
+        <button onclick="kirimData()">
+            Lanjut ke Survei
+        </button>
+
+        <div id="status"></div>
+
+        <div class="credit">
+            Ketpang Ternate
+        </div>
+
+    </div>
+
+   <div class="panduan">
+
+<b>Panduan Skor :</b>
+
+<span class="s1">1</span> = Amat Sangat Buruk,
+
+<span class="s2">2</span> = Sangat Buruk,
+
+<span class="s3">3</span> = Buruk,
+
+<span class="s4">4</span> = Kurang Baik,
+
+<span class="s5">5</span> = Cukup,
+
+<span class="s6">6</span> = Baik,
+
+<span class="s7">7</span> = Sangat Baik,
+
+<span class="s8">8</span> = Amat Baik,
+
+<span class="s9">9</span> = Amat Sangat Baik
+
 </div>
+
 </div>
 
 <script>
 
 async function kirimData(){
 
-const nama=document.getElementById('nama').value;
-const profesi=document.getElementById('profesi').value;
-const hp=document.getElementById('hp').value;
+    const nama = document.getElementById('nama').value;
+    const profesi = document.getElementById('profesi').value;
+    const hp = document.getElementById('hp').value;
 
-if(!nama || !profesi || !hp){
-alert("Lengkapi data terlebih dahulu");
-return;
-}
+    if(!nama || !profesi || !hp){
 
-document.getElementById("status").innerHTML=
-"Menyimpan data...";
+        alert("Lengkapi data terlebih dahulu");
+        return;
 
-const url =
-"https://script.google.com/macros/s/AKfycbwgT-qw_B-j-Tqpuy5IXwZVJSYpGrdDdKlJHgN9LsmuSuDbqydyBaG5aObDUXXyRPgBeg/exec";
+    }
 
-const formData = new FormData();
-formData.append("nama", nama);
-formData.append("profesi", profesi);
-formData.append("hp", hp);
+    document.getElementById("status").innerHTML =
+    "Menyimpan data...";
 
-try{
+    const url =
+    "https://script.google.com/macros/s/AKfycbwgT-qw_B-j-Tqpuy5IXwZVJSYpGrdDdKlJHgN9LsmuSuDbqydyBaG5aObDUXXyRPgBeg/exec";
 
-await fetch(url,{
-method:"POST",
-body:JSON.stringify({
-nama:nama,
-profesi:profesi,
-hp:hp,
-userAgent:navigator.userAgent
-}),
-mode:"no-cors"
-});
+    try{
 
-document.getElementById("status").innerHTML=
-"Data tersimpan. Mengalihkan ke Survei IHAI...";
+        await fetch(url,{
+            method:"POST",
+            body:JSON.stringify({
+                nama:nama,
+                profesi:profesi,
+                hp:hp,
+                userAgent:navigator.userAgent
+            }),
+            mode:"no-cors"
+        });
 
-setTimeout(function(){
+        document.getElementById("status").innerHTML =
+        "Data tersimpan. Mengalihkan ke Survei IHAI...";
 
-window.location.href =
-"https://surveiihai.neterra.id/s/surveiihai";
+        setTimeout(function(){
 
-},1500);
+            window.location.href =
+            "https://surveiihai.neterra.id/s/surveiihai";
 
-}catch(e){
+        },1500);
 
-alert("Terjadi kesalahan");
+    }catch(e){
 
-}
+        alert("Terjadi kesalahan");
+
+    }
 
 }
 
