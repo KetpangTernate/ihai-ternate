@@ -49,6 +49,17 @@ input{
     box-sizing:border-box;
     font-size:15px;
 }
+select{
+    width:100%;
+    padding:14px;
+    margin-bottom:15px;
+    border:none;
+    border-radius:10px;
+    box-sizing:border-box;
+    font-size:15px;
+    background:white;
+    color:#333;
+}
 
 button{
     width:100%;
@@ -97,6 +108,22 @@ button:hover{
     color:white;
 }
 
+select{
+    width:100%;
+    padding:14px;
+    margin-bottom:15px;
+    border:none;
+    border-radius:10px;
+    box-sizing:border-box;
+    font-size:15px;
+    color:#666;
+    background:white;
+}
+
+select:valid{
+    color:#000;
+}
+
 .s1{color:#ff0000;font-weight:bold;}
 .s2{color:#ff3300;font-weight:bold;}
 .s3{color:#ff6600;font-weight:bold;}
@@ -143,9 +170,49 @@ button:hover{
                id="nama"
                placeholder="Nama Lengkap">
 
-        <input type="text"
-               id="profesi"
-               placeholder="Pekerjaan / Profesi">
+        <select id="profesi" required>
+            <option value="" selected disabled>
+            Pilih Pekerjaan / Profesi</option>
+
+            <option>Berusaha Sendiri/Wirausahawan</option>
+
+            <option>Petani/Nelayan/Peternak/Pekebun/Pekerja Ladang yang Dibantu Buruh Tidak Tetap/Buruh Tidak Dibayar</option>
+
+            <option>Petani/Nelayan/Peternak/Pekebun/Pekerja Ladang yang Dibantu Buruh Tetap/Buruh Dibayar</option>
+
+            <option>Buruh/Karyawan/Pegawai Swasta</option>
+
+            <option>Pekerja Bebas</option>
+
+            <option>Pekerja Keluarga/Tak Dibayar/Ibu Rumah Tangga (IRT)</option>
+
+            <option>Aparatur Sipil Negara (ASN) – PNS & PPPK</option>
+
+            <option>Tenaga Honorer/Tenaga Kontrak/Pegawai Tidak Tetap (PTT) Pemda</option>
+
+            <option>Anggota TNI/Polri</option>
+
+            <option>Dosen/Akademisi/Tenaga Pendidik di Perguruan Tinggi</option>
+
+            <option>Guru/Tenaga Kependidikan Dasar dan Menengah</option>
+
+            <option>Dokter/Tenaga Kesehatan (Perawat/Bidan/Apoteker/dll. yang setara)</option>
+
+            <option>Anggota DPRD Provinsi</option>
+
+            <option>Anggota DPRD Kabupaten/Kota</option>
+
+            <option>Kepala Daerah/Wakil Kepala Daerah Provinsi</option>
+
+            <option>Kepala Daerah/Wakil Kepala Daerah Kabupaten/Kota</option>
+
+            <option>Mahasiswa/Pelajar</option>
+
+            <option>Tidak Bekerja</option>
+
+            <option>Profesi Lainnya</option>
+
+        </select>
 
         <input type="text"
                id="hp"
